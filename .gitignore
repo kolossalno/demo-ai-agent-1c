@@ -1,0 +1,28 @@
+# 1C:Enterprise files & databases
+*.1cd
+*.1ch
+*.cfl
+*.pfl
+*.log
+*.tmp
+*.epf.bak
+*.erf.bak
+*.cf.bak
+*.cfe.bak
+
+# Temp folders
+temp/
+tmp/
+.temp/
+
+# IDE and editors
+.idea/
+.vscode/
+*.suo
+*.user
+*.sublime-*
+
+# OS files
+Thumbs.db
+[Dd]esktop.ini
+.DS_Store

@@ -1,0 +1,130 @@
+{
+  "title": "Демонстрационный ИИ-агент (ReAct)",
+  "events": {
+    "OnCreateAtServer": "ПриСозданииНаСервере"
+  },
+  "attributes": [
+    {
+      "name": "Объект",
+      "type": "ExternalDataProcessorObject.DemoAIAgent",
+      "main": true
+    }
+  ],
+  "commands": [
+    {
+      "name": "ВыполнитьЗапрос",
+      "action": "ВыполнитьЗапрос",
+      "title": "Запустить агента"
+    }
+  ],
+  "elements": [
+    {
+      "group": "vertical",
+      "name": "ГруппаНастройкиПодключения",
+      "title": "Настройки подключения",
+      "behavior": "collapsible",
+      "collapsed": false,
+      "children": [
+        {
+          "input": "АдресAPI",
+          "path": "Объект.АдресAPI",
+          "title": "Адрес API",
+          "autoMaxWidth": false
+        },
+        {
+          "input": "APIКлюч",
+          "path": "Объект.APIКлюч",
+          "title": "API ключ",
+          "passwordMode": true,
+          "autoMaxWidth": false
+        },
+        {
+          "group": "alwaysHorizontal",
+          "name": "ГруппаПараметрыМодели",
+          "showTitle": false,
+          "children": [
+            {
+              "input": "Модель",
+              "path": "Объект.Модель",
+              "title": "Модель",
+              "autoMaxWidth": false
+            },
+            {
+              "input": "МаксимумИтераций",
+              "path": "Объект.МаксимумИтераций",
+              "title": "Максимум итераций",
+              "autoMaxWidth": false
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "group": "vertical",
+      "name": "ГруппаСостояниеИЗадача",
+      "title": "Состояние и задача",
+      "showTitle": true,
+      "children": [
+        {
+          "input": "ТекущийКаталог",
+          "path": "Объект.ТекущийКаталог",
+          "title": "Текущий каталог",
+          "readOnly": true,
+          "autoMaxWidth": false
+        },
+        {
+          "input": "ЗапросПользователя",
+          "path": "Объект.ЗапросПользователя",
+          "title": "Запрос пользователя",
+          "multiLine": true,
+          "height": 3,
+          "autoMaxWidth": false,
+          "horizontalStretch": true
+        },
+        {
+          "button": "КнопкаВыполнитьЗапрос",
+          "command": "ВыполнитьЗапрос",
+          "title": "Запустить агента",
+          "defaultButton": true,
+          "picture": "StdPicture.ExecuteTask"
+        }
+      ]
+    },
+    {
+      "group": "alwaysHorizontal",
+      "name": "ГруппаРезультатИТрассировка",
+      "title": "Результат и трассировка",
+      "childItemsWidth": "LeftWide",
+      "children": [
+        {
+          "input": "ЛогРассуждений",
+          "path": "Объект.ЛогРассуждений",
+          "title": "Лог рассуждений (трассировка)",
+          "readOnly": true,
+          "multiLine": true,
+          "height": 15,
+          "verticalStretch": true,
+          "horizontalStretch": true,
+          "autoMaxWidth": false,
+          "font": {
+            "faceName": "Consolas",
+            "height": 9,
+            "kind": "Absolute",
+            "scale": 100
+          }
+        },
+        {
+          "input": "ФинальныйОтвет",
+          "path": "Объект.ФинальныйОтвет",
+          "title": "Финальный ответ",
+          "readOnly": true,
+          "multiLine": true,
+          "height": 15,
+          "verticalStretch": true,
+          "horizontalStretch": true,
+          "autoMaxWidth": false
+        }
+      ]
+    }
+  ]
+}
